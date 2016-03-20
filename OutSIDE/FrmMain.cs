@@ -21,18 +21,43 @@ namespace OutSIDE
         public FrmMain()
         {
             InitializeComponent();
+            ResizeMenuPadding();
         }
+
+
 
         #region Menu Items
 
+        private void ResizeMenuPadding()
+        {
+            var mfpWidth = menuFlowPanel.Width;
+            var menuMainWidth = menuMain.Width;
+            var menuPaddingWidth = menuPadding.Width;
+            var menuRightWidth = menuRight.Width;
+
+            var menuExpansion = mfpWidth - (menuMainWidth + menuPaddingWidth + menuRightWidth);
+            menuPadding.Width += menuExpansion;
+
+        }
+
         #region View Menu
-        private void codeViewToolStripMenuItem_Click(object sender, EventArgs e)
+        private void codeViewToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            NewCodeViewDocument();
+        }
+
+        private void NewCodeViewDocument()
         {
             codeView = new FrmCodeView();
             codeView.Show(dockPanel, DockState.Document);
         }
 
-        private void solutionExplorerToolStripMenuItem_Click(object sender, EventArgs e)
+        private void solutionExplorerToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            NewSolutionExplorerWindow();
+        }
+
+        private void NewSolutionExplorerWindow()
         {
             if (solutionExplorerToolStripMenuItem.Checked)
             {
@@ -55,9 +80,15 @@ namespace OutSIDE
             about.ShowDialog();
         }
 
+
         #endregion
 
         #endregion
+
+        private void FrmMain_SizeChanged(object sender, EventArgs e)
+        {
+            ResizeMenuPadding();
+        }
 
         
     }
