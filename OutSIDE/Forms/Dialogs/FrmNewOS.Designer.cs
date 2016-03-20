@@ -31,12 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNewOs));
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabGeneral = new System.Windows.Forms.TabPage();
+            this.cbTargetCpus = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.tbOSName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnApply = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbTargetCpus = new System.Windows.Forms.ComboBox();
+            this.cbHighLevelLanguage = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabGeneral.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +59,8 @@
             // tabGeneral
             // 
             this.tabGeneral.AutoScroll = true;
+            this.tabGeneral.Controls.Add(this.cbHighLevelLanguage);
+            this.tabGeneral.Controls.Add(this.label3);
             this.tabGeneral.Controls.Add(this.cbTargetCpus);
             this.tabGeneral.Controls.Add(this.label2);
             this.tabGeneral.Controls.Add(this.tbOSName);
@@ -68,6 +72,24 @@
             this.tabGeneral.TabIndex = 0;
             this.tabGeneral.Text = "General";
             this.tabGeneral.UseVisualStyleBackColor = true;
+            // 
+            // cbTargetCpus
+            // 
+            this.cbTargetCpus.FormattingEnabled = true;
+            this.cbTargetCpus.Location = new System.Drawing.Point(365, 30);
+            this.cbTargetCpus.Name = "cbTargetCpus";
+            this.cbTargetCpus.Size = new System.Drawing.Size(302, 21);
+            this.cbTargetCpus.TabIndex = 3;
+            this.cbTargetCpus.SelectedIndexChanged += new System.EventHandler(this.cbTargetCpus_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(362, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Target Cpu";
             // 
             // tbOSName
             // 
@@ -107,23 +129,23 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // label2
+            // cbHighLevelLanguage
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(362, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Target Cpu";
+            this.cbHighLevelLanguage.FormattingEnabled = true;
+            this.cbHighLevelLanguage.Location = new System.Drawing.Point(365, 80);
+            this.cbHighLevelLanguage.Name = "cbHighLevelLanguage";
+            this.cbHighLevelLanguage.Size = new System.Drawing.Size(302, 21);
+            this.cbHighLevelLanguage.TabIndex = 5;
+            this.cbHighLevelLanguage.SelectedIndexChanged += new System.EventHandler(this.cbHighLevelLanguage_SelectedIndexChanged);
             // 
-            // cbTargetCpus
+            // label3
             // 
-            this.cbTargetCpus.FormattingEnabled = true;
-            this.cbTargetCpus.Location = new System.Drawing.Point(365, 30);
-            this.cbTargetCpus.Name = "cbTargetCpus";
-            this.cbTargetCpus.Size = new System.Drawing.Size(302, 21);
-            this.cbTargetCpus.TabIndex = 3;
-            this.cbTargetCpus.SelectedIndexChanged += new System.EventHandler(this.cbTargetCpus_SelectedIndexChanged);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(362, 64);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(109, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "High Level Language";
             // 
             // FrmNewOs
             // 
@@ -153,5 +175,7 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.ComboBox cbTargetCpus;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbHighLevelLanguage;
+        private System.Windows.Forms.Label label3;
     }
 }

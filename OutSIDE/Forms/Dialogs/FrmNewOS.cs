@@ -18,6 +18,7 @@ namespace OutSIDE.Forms.Dialogs
         {
             InitializeComponent();
             cbTargetCpus.DataSource = Enum.GetNames(typeof(OperatingSystemModel.CpuTargets));
+            cbHighLevelLanguage.DataSource = Enum.GetNames(typeof (OperatingSystemModel.HighLevelLanguages));
         }
 
         private void btnApply_Click(object sender, EventArgs e)
@@ -46,6 +47,11 @@ namespace OutSIDE.Forms.Dialogs
         private void cbTargetCpus_SelectedIndexChanged(object sender, EventArgs e)
         {
             OperatingSystemModel.CpuTarget = cbTargetCpus.SelectedIndex;
+        }
+
+        private void cbHighLevelLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            OperatingSystemModel.HighLevelLanguage = cbHighLevelLanguage.SelectedIndex;
         }
     }
 }
