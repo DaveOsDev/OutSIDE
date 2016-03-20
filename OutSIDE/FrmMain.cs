@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,11 @@ namespace OutSIDE
         {
             InitializeComponent();
             ResizeMenuPadding();
+#if DEBUG
+            AccountModel.Name = "Dave";
+            AccountModel.EmailAddress = "DaveOSDev@outlook.com"; // Use this email if you wish to contact me by that method.
+            UpdateTitle();
+#endif
         }
 
         #region Main Menu Items
@@ -49,6 +55,7 @@ namespace OutSIDE
             if (dr == DialogResult.Cancel) return;
 
             UpdateTitle();
+            BareBones.CreateBareBones();
         }
 
         #endregion
@@ -87,7 +94,7 @@ namespace OutSIDE
         #endregion
 
         #region Help Menu
-       
+
         private void aboutToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             FrmAbout about = new FrmAbout();
@@ -109,7 +116,7 @@ namespace OutSIDE
             }
         }
 
-       
+
 
         #endregion
 
@@ -136,6 +143,19 @@ namespace OutSIDE
         #endregion
 
         #endregion
-        
+
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+            FirstRun();
+        }
+
+        private void FirstRun()
+        {
+            var outsidePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "OutSIDE");
+            var defaultProjectsPath = Path.Combine(outsidePath, "Projects");
+
+            if (!Directory.Exists(outsidePath)) Directory.CreateDirectory(outsidePath);
+            if (!Directory.Exists(defaultProjectsPath)) Directory.CreateDirectory(defaultProjectsPath);
+        }
     }
 }
