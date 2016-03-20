@@ -139,11 +139,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="OpenWindow.ico" />
+    <Content Include="Scaffolding\ISOGenerators\ISO9660Generator.exe" />
+    <Content Include="Scaffolding\ISOGenerators\Mosa.Utility.IsoImage.dll" />
+    <Content Include="Scaffolding\TargetCpu\x86\Assemblers\nasm.exe" />
     <None Include="Resources\account_settings_icon.jpg" />
     <None Include="Resources\new.png" />
     <None Include="Resources\OpenWindow.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Scaffolding\Emulators\" />
+    <Folder Include="Scaffolding\TargetCpu\x86\Bootloaders\" />
+    <Folder Include="Scaffolding\TargetCpu\x86\Compilers\" />
+    <Folder Include="Scaffolding\TargetCpu\x86\HighLevelLanguages\" />
+    <Folder Include="Scaffolding\TargetCpu\x86\Linkers\" />
+    <Folder Include="Scaffolding\TargetCpu\x86\Scripts\" />
+    <Folder Include="Scaffolding\VMMs\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
