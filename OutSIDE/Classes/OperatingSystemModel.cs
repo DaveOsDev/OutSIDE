@@ -14,8 +14,21 @@ namespace OutSIDE.Classes
     /// </remarks>
     internal static class OperatingSystemModel
     {
+        internal enum  CpuTargets 
+        {
+            X86,
+          //  X64,              // UnComment as each CPU Target is being implemented
+          //  Mips,
+          //  Itanium,
+          //  Motorola68000,
+        }
+
+
         internal static bool OperatingSystemProjectLoaded { get; set; }
         internal static string OperatingSystemName { get; set; }
+        internal static int CpuTarget { get; set; }
 
     }
+
+
 }

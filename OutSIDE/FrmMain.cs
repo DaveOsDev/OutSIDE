@@ -44,7 +44,11 @@ namespace OutSIDE
 
         private void newToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FrmNewOs newOs = new FrmNewOs();
+            DialogResult dr = newOs.ShowDialog();
+            if (dr == DialogResult.Cancel) return;
 
+            UpdateTitle();
         }
 
         #endregion
