@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("OutSIDE")]
-[assembly: AssemblyDescription("The OS Integrated Development Environment")]
+[assembly: AssemblyDescription("The IDE for Operating System Development")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("TriGen")]
 [assembly: AssemblyProduct("OutSIDE")]
-[assembly: AssemblyCopyright("Copyright ©  TriGen 2016")]
+[assembly: AssemblyCopyright("Copyright © TriGen 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
